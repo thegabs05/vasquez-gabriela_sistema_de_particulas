@@ -1,6 +1,6 @@
 class Particula {
   constructor() {
-    this.tamInicial = random(5, 20);
+    this.tamInicial = random(5, 25);
     this.tam = this.tamInicial;
     this.estaMuerta = false;
     this.tiempoDeVidaInicial = Math.ceil(random(10, 300));
@@ -8,10 +8,10 @@ class Particula {
 
     this.pos = createVector(mouseX, mouseY);
 
-    this.vel = createVector(0, random(1, 3));
-    this.vel.rotate(random(40));
+    this.vel = createVector(0, random(-0.01, -0.2));
+    this.vel.rotate(random(5, 15));
 
-    this.g = createVector(0, -0.001);
+    this.g = createVector(0, -0.06);
   }
   // Metodo -> method update
   update() {
@@ -36,7 +36,7 @@ class Particula {
   }
   // Metodo -> method display
   display() {
-    fill(255, 215, random(64, 255), 50);
+    fill(random(255, 0), 255, 0, 70);
     noStroke();
     circle(this.pos.x, this.pos.y, this.tamInicial);
   }
